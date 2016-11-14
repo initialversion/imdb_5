@@ -64,6 +64,10 @@ class ActorsController < ApplicationController
 
     @actor.destroy
 
-    redirect_to("/actors", :notice => "Actor deleted.")
+    if URI(request.referer).path == "/actors/#{@actor.id}"
+      redirect_to("/", :notice => "Actor deleted.")
+    else
+      redirect_to(:back, :notice => "Actor deleted.")
+    end
   end
 end

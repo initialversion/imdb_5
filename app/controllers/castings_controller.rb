@@ -61,6 +61,10 @@ class CastingsController < ApplicationController
 
     @casting.destroy
 
-    redirect_to("/castings", :notice => "Casting deleted.")
+    if URI(request.referer).path == "/castings/#{@casting.id}"
+      redirect_to("/", :notice => "Casting deleted.")
+    else
+      redirect_to(:back, :notice => "Casting deleted.")
+    end
   end
 end

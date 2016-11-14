@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://github.com/raghubetina/starter_generators.git
-  revision: 3c2637552bde4eeb1fe77a69fb6cfabeee6e828b
+  revision: 39d18131986cd6cb7ac0cf83425dc9c89e69e4e7
   specs:
     starter_generators (0.9.6)
 
