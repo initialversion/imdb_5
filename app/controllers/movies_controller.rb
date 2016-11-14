@@ -64,6 +64,10 @@ class MoviesController < ApplicationController
 
     @movie.destroy
 
-    redirect_to("/movies", :notice => "Movie deleted.")
+    if URI(request.referer).path == "/movies/#{@movie.id}"
+      redirect_to("/", :notice => "Movie deleted.")
+    else
+      redirect_to(:back, :notice => "Movie deleted.")
+    end
   end
 end
